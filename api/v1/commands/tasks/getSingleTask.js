@@ -7,6 +7,8 @@ const call = async(req,res) => {
 
     if(success){
       res.status(200).send({task: data})
+    }else{
+      res.status(404).send({message: "task not found"})
     }
   } catch (error) {
     res.status(500).send(error.message)
